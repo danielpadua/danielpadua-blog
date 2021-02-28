@@ -4,6 +4,7 @@ PATH
     jekyll-theme-chirpy (3.2.1)
       jekyll (~> 4.1)
       jekyll-archives (~> 2.2)
+      jekyll-multiple-languages-plugin (~> 1.7)
       jekyll-paginate (~> 1.1)
       jekyll-redirect-from (~> 0.16)
       jekyll-seo-tag (~> 2.7)
@@ -52,6 +53,8 @@ GEM
       terminal-table (~> 2.0)
     jekyll-archives (2.2.1)
       jekyll (>= 3.6, < 5.0)
+    jekyll-multiple-languages-plugin (1.7.0)
+      jekyll (>= 2.0, < 5.0)
     jekyll-paginate (1.1.0)
     jekyll-redirect-from (0.16.0)
       jekyll (>= 3.3, < 5.0)
@@ -73,6 +76,8 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
     nokogiri (1.11.1-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.11.1-x86_64-linux)
       racc (~> 1.4)
     nokogumbo (2.0.4)
       nokogiri (~> 1.8, >= 1.8.4)
@@ -105,6 +110,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-20
+  x86_64-linux
 
 DEPENDENCIES
   html-proofer (~> 3.18)
@@ -114,4 +120,4 @@ DEPENDENCIES
   wdm (~> 0.1.1)
 
 BUNDLED WITH
-   2.2.4
+   2.2.7
