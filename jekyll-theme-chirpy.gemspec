@@ -30,5 +30,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "jekyll-archives", "~> 2.2"
   spec.add_runtime_dependency "jekyll-sitemap", "~> 1.4"
   spec.add_runtime_dependency "jekyll-multiple-languages-plugin", '~> 1.7'
-
+  spec.add_runtime_dependency "webrick", "~> 1.7"
 end

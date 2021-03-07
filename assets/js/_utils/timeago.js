@@ -13,10 +13,10 @@ $(function() {
   function timeago(iso, isLastmod) {
     let now = new Date();
     let past = new Date(iso);
-
+    let lang = localStorage.getItem('lang') || navigator.language || navigator.userLanguage;
     if (past.getFullYear() !== now.getFullYear()) {
       toRefresh -= 1;
-      return past.toLocaleString("en-US", {
+      return past.toLocaleString(lang, {
         year: "numeric",
         month: "short",
         day: "numeric"
@@ -25,7 +25,7 @@ $(function() {
 
     if (past.getMonth() !== now.getMonth()) {
       toRefresh -= 1;
-      return past.toLocaleString("en-US", {
+      return past.toLocaleString(lang, {
         month: "short",
         day: "numeric"
       });

@@ -3,10 +3,12 @@
 -->
 
 {% if page.layout == 'home' or page.layout == 'post' %}
-  {% if site.google_analytics.pv.enabled %}
-    <!-- pv-report needs countup.js -->
-    <script async src="https://cdn.jsdelivr.net/npm/countup.js@1.9.3/dist/countUp.min.js"></script>
-    <script async src="{{ '/assets/js/dist/pvreport.min.js' | relative_url }}"></script>
+  {% if jekyll.environment == 'production' %}
+    {% if site.google_analytics.pv.enabled %}
+      <!-- pv-report needs countup.js -->
+      <script async src="https://cdn.jsdelivr.net/npm/countup.js@1.9.3/dist/countUp.min.js"></script>
+      <script async src="{{ site.baseurl }}{{ '/assets/js/dist/pvreport.min.js' }}"></script>
+    {% endif %}
   {% endif %}
 {% endif %}
 
@@ -19,7 +21,7 @@
 {% endif %}
 
 {% assign js = type | prepend: '/assets/js/dist/' | append: '.min.js' %}
-<script defer src="{{ js | relative_url }}"></script>
+<script defer src="{{ site.baseurl }}{{ js }}"></script>
 
 {% if page.math %}
   <!-- MathJax -->
@@ -29,11 +31,12 @@
 
 {% if jekyll.environment == 'production' %}
   <!-- PWA -->
-  <script defer src="{{ '/app.js' | relative_url }}"></script>
+  <script defer src="{{ site.baseurl }}{{ '/app.js' }}"></script>
 
   <!-- GA -->
-  {% if site.google_analytics.id %}
-    {% include google-analytics.html %}
+  {% if jekyll.environment == 'production' %}
+    {% if site.google_analytics.id %}
+      {% include google-analytics.html %}
+    {% endif %}
   {% endif %}
-
 {% endif %}

@@ -1,0 +1,80 @@
+global:
+  description: Um blog de programação e tecnologia focado em .net e java escrito tanto em português quanto inglês
+  tagline: Posts de programação e tecnologia do Daniel Padua
+  site_description: >-                        # used by seo meta and the atom feed
+    Um blog que contém posts de tecnologia
+    e programação, focados em .net e java
+    escrito nativamente em português e inglês
+  words: palavras
+  min: min
+  read: leitura
+  google_sp:
+    enabled: true
+    url: 'https://danielpadua-blog-299920.ue.r.appspot.com'
+    endpoint: '	https://danielpadua-blog-299920.ue.r.appspot.com/query?id=ahlwfmRhbmllbHBhZHVhLWJsb2ctMjk5OTIwchULEghBcGlRdWVyeRiAgICYxfaCCgw'
+pages:
+  home: Daniel Padua Blog
+  categories: Categorias
+  tags: Tags
+  archives: Arquivos
+  about: Sobre
+  comment_policy: Política de Comentários
+  posts: Posts
+categories:
+  category_label: categoria
+  categories_label: categorias
+  post_label: post
+  posts_label: posts
+langs:
+  en: English
+  pt: Português
+topbar:
+  search_hint: Pesquisar
+panel:
+  recent_updates: Últimas Atualizações
+  trending_tags: Tags em Alta
+  tocs: Sumário
+posts:
+  posted: Postado
+  by: por
+  updated: Atualizado
+  views: visualizações
+  license_prefix: Esse post está licenciado sob
+  license_by: pelo autor
+  previous: Mais Antigo
+  next: Mais Recente
+post_sharing:
+  label: Compartilhar
+related_posts:
+  label: Leituras Adicionais
+footer:
+  rights:
+    brief: Alguns direitos reservados.
+    verbose: >-
+      Exceto onde indicado de outra forma, as postagens de blog neste site são licenciadas
+      sob a Licença Creative Commons Atribuição 4.0 Internacional (CC BY 4.0) do autor.
+disqus:
+  shortname: blog-pt-danielpadua
+
+datetime:
+  months:
+    january: Janeiro
+    february: Fevereiro
+    march: Março
+    april: Abril
+    may: Maio
+    june: Junho
+    july: Julho
+    august: Agosto
+    september: Setembro
+    october: Outubro
+    november: Novembro
+    december: Dezembro
+  week_days:
+    sunday: Domingo
+    monday: Segunda
+    tuesday: Terça
+    wednesday: Quarta
+    thursday: Quinta
+    friday: Sexta
+    saturday: Sábado

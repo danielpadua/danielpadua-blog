@@ -3,6 +3,7 @@ layout: page
 # The Archives of posts.
 ---
 
+{% assign months = "january|february|march|april|may|june|july|august|september|october|november|december" | split: "|" %}
 
 <div id="archives" class="pl-xl-2">
 {% for post in site.posts %}
@@ -16,10 +17,12 @@ layout: page
   {% endif %}
     <li>
       <div>
+        {% assign m = post.date | date: "%B" | downcase %}
+        {% assign month = site.translations[site.lang].datetime.months[m] | slice: 0, 3 %}
         {% capture this_day %}{{ post.date | date: "%d" }}{% endcapture %}
         {% capture this_month %}{{ post.date | date: "%b" }}{% endcapture %}
         <span class="date day">{{ this_day }}</span>
-        <span class="date month small text-muted">{{ this_month }}</span>
+        <span class="date month small text-muted">{{ month }}</span>
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
       </div>
     </li>

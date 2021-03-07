@@ -44,7 +44,7 @@ const include = [
   '{{ icon_url }}/favicon-96x96.png',
   '{{ icon_url }}/favicon-16x16.png',
   '{{ icon_url }}/ms-icon-144x144.png',
-  '{{ icon_url }}/manifest.json',
+  '{{ icon_url }}/manifest.webmanifest',
   '{{ icon_url }}/browserconfig.xml',
 
   /*--- Others ---*/
@@ -57,8 +57,10 @@ const include = [
 ];
 
 const exclude = [
-  {%- if site.google_analytics.pv.proxy_url and site.google_analytics.pv.enabled -%}
-    '{{ site.google_analytics.pv.proxy_url }}',
+  {%- if jekyll.environment == 'production' -%}
+    {%- if site.translations[site.lang].global.google_sp.url and site.translations[site.lang].global.google_sp.enabled -%}
+      '{{ site.translations[site.lang].global.google_sp.url }}',
+    {%- endif -%}
   {%- endif -%}
   '/assets/js/data/pageviews.json',
   '/img.shields.io/'

@@ -1,8 +1,11 @@
 ---
-title: About
+title: about
+description: More info about Daniel Padua
 icon: fas fa-info
 order: 4
+permalink: /about/
+permalink_pt: /sobre/
 ---
 
 
-> **Note**: Add Markdown syntax content to file `_tabs/about.md` and it will show up on this page.
+{% tf _tabs/about.md %}

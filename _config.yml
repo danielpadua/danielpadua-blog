@@ -11,54 +11,59 @@ baseurl: ''
 lang: en-US
 
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
-timezone: Asia/Shanghai
+timezone: America/Sao_Paulo
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # --------------------------
-title: Chirpy                          # the main title
+title: Daniel Padua Blog                          # the main title
 
-tagline: A text-focused Jekyll theme   # it will display as the sub-title
+tagline: Daniel Padua’s technology and programming posts   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  A minimal, portfolio, sidebar,
-  bootstrap Jekyll theme with responsive web design
-  and focuses on text presentation.
+  A blog containing technology
+  and programming posts
+  focused on .net and java
+  natively written in
+  english and portuguese
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: ''
+url: 'https://blog.danielpadua.dev'
 
-author: your_full_name                  # change to your full name
+author: Daniel Padua Ferreira                  # change to your full name
 
 github:
-  username: github_username             # change to your github username
+  username: danielpadua             # change to your github username
 
 twitter:
-  username: twitter_username            # change to your twitter username
+  username: daniel_padua            # change to your twitter username
 
 social:
-  name: your_full_name                  # it will shows as the copyright owner in Footer
-  email: example@doamin.com             # change to your email address
+  name: Daniel Padua Ferreira                  # it will shows as the copyright owner in Footer
+  email: daniel.padua@outlook.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username      # change to your twitter homepage
-    - https://github.com/username       # change to your github homepage
+    - https://twitter.com/daniel_padua      # change to your twitter homepage
+    - https://github.com/danielpadua       # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
 
-google_site_verification: google_meta_tag_verification # change to your verification string
+google_site_verification: igEajmUisj3Cy9pPbdswKJ7g-abGEOcbbABfEyRAgqE # change to your verification string
 # --------------------------
 
 google_analytics:
-  id: ''          # Fill with your Google Analytics ID
+  id: 'G-D1GZ3ZZJHJ'          # Fill with your Google Analytics ID
   pv:
     # The Google Analytics pageviews switch.
     # DO NOT enable it unless you know how to deploy the Google Analytics superProxy.
-    enabled: false
+    enabled: true
     # the next options only valid when `google_analytics.pv` is enabled.
-    proxy_url: ''
-    proxy_endpoint: ''
+    proxy_url: 'https://danielpadua-blog-299920.ue.r.appspot.com'
+    proxy_endpoint: 'https://danielpadua-blog-299920.ue.r.appspot.com/query?id=ahlwfmRhbmllbHBhZHVhLWJsb2ctMjk5OTIwchULEghBcGlRdWVyeRiAgICYlKaDCgw'
     cache: false  # pv data local cache, good for the users from GFW area.
+
+google_adsense:
+  id: ca-pub-8952525770650051
 
 # Prefer color scheme setting.
 #
@@ -81,16 +86,17 @@ theme_mode:   # [light|dark]
 img_cdn: ''
 
 # the avatar on sidebar, support local or CORS resources
-avatar: https://cdn.jsdelivr.net/gh/cotes2020/chirpy-images/commons/avatar.jpg
+avatar: /assets/img/avatar.jpg
 
 # boolean type, the global switch for ToC in posts.
 toc: true
 
 disqus:
-  comments: false  # boolean type, the global switch for posts comments.
-  shortname: ''    # Fill with your Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
+  comments: true  # boolean type, the global switch for posts comments.
+  shortname: 'blog-en-danielpadua'    # Fill with your Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
 
 paginate: 10
+paginate_path: "/posts/paging/:num"
 
 # ------------ The following options are not recommended to be modified ------------------
 
@@ -137,6 +143,7 @@ defaults:
       layout: page
       permalink: /:title/
       dynamic_title: true    # Hide title in mobile screens.
+      visible: true
 
 sass:
   style: compressed
@@ -173,3 +180,7 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+
+# jekyll-multiple-languages-plugin settings:
+languages: ["en", "pt"]
+exclude_from_localizations: ["javascript", "images", "scripts", "favicon.ico"]

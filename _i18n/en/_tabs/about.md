@@ -1,0 +1,1 @@
+Microsoft Certified Professional (MCP), Certified Tester Foundation Level (CTFL), Software Engineer, Technology and Cryptocurrencies enthusiast. See more in: [https://danielpadua.dev](https://danielpadua.dev)

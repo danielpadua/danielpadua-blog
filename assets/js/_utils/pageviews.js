@@ -206,9 +206,8 @@ function fetchPageviews(fetchOrigin = true, filterOrigin = false) {
 
 $(function() {
   if ($(".pageviews").length > 0) {
-    PvCache.inspectKeys();
+    // PvCache.inspectKeys();
     let cache = PvCache.getData();
-
     if (cache) {
       displayPageviews(cache);
 

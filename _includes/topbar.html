@@ -7,8 +7,9 @@
     <span id="breadcrumb">
 
     {% assign paths = page.url | split: '/' %}
+    {% assign paginate_path = site.paginate_path | replace: '/:num', '' %}
 
-    {% if paths.size == 0 %}
+    {% if paths.size == 0 or page.url contains paginate_path %}
       <!-- index page -->
       <span>{{ 'Posts' }}</span>
     {% else %}
@@ -18,24 +19,29 @@
         {% if forloop.first %}
           {% unless page.layout == 'post' %}
           <span>
-            <a href="{{ '/' | relative_url }}">{{ 'Home' }}</a>
+            <a href="{{ site.baseurl }}/">{{ 'Home' }}</a>
           </span>
+
           {% endunless %}
 
         {% elsif forloop.last %}
-          <span>{{ page.title }}</span>
+          {% assign breadcrumb_translation_label = site.translations[site.lang].pages[page.title] %}
+          <span>{{ breadcrumb_translation_label | default: page.title | capitalize }}</span>
 
         {% else %}
-        <span>
-          {% assign url = item %}
-          {% if item == 'posts' and page.layout == 'post' %}
-            {% assign url = '/' %}
-          {% endif %}
-          <a href="{{ url | relative_url }}">
-            {{ item | capitalize }}
-          </a>
-        </span>
+          <span>
+            {% assign url = item %}
+            <!-- {% assign breadcrumb_translation_url = site.translations[site.lang].pages[item] | downcase | append: "/" %}
+            {% assign breadcrumb_translation_label = site.translations[site.lang].pages[item] %} -->
 
+            {% if item == 'posts' and page.layout == 'post' %}
+              {% assign url = '' %}
+            {% endif %}
+            <a href="{{ site.baseurl }}/{{ url }}">
+              <!-- {{ breadcrumb_translation_label | default: item | capitalize }} {{ item }} -->
+              {{ item | capitalize }}
+            </a>
+          </span>
         {% endif %}
 
       {% endfor %}
@@ -60,7 +66,7 @@
     <span id="search-wrapper" class="align-items-center">
       <i class="fas fa-search fa-fw"></i>
       <input class="form-control" id="search-input" type="search"
-        aria-label="search" placeholder="{{ site.data.label.search_hint | default: 'Search' }}...">
+        aria-label="search" placeholder="{% t topbar.search_hint %}...">
       <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i>
     </span>
     <span id="search-cancel" >Cancel</span>

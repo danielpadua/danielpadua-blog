@@ -1,7 +1,9 @@
 ---
 layout: page
-title: "404: Page not found"
+title: "404: Page not found • Página não encontrada"
 permalink: /404.html
+
+isNotFound: true
 
 redirect_from:
   - /norobots/
@@ -11,11 +13,18 @@ redirect_from:
 dynamic_title: true
 ---
 
-<div class="lead">
-  <p>Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. </p>
-  <p>
-    <a href="{{ '/' | relative_url }}">Head back Home</a>
-    to try finding it again, or search for it on the
-    <a href="{{ 'archives' | relative_url }}">Archives page</a>.
-  </p>
+<div class="card text-white bg-transparent mb-3">
+  <div class="card-header bg-danger">English</div>
+  <div class="card-body" style="color: var(--text-color)">
+    <h5 class="card-title">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist</h5>
+    <p><a href="{{ site.baseurl }}/">Head back Home</a> to try finding it again, or search for it on the <a href="{{ site.baseurl }}/archives">Archives page</a>.</p>
+  </div>
+</div>
+
+<div class="card text-white bg-transparent">
+  <div class="card-header bg-danger">Português</div>
+  <div class="card-body" style="color: var(--text-color)">
+    <h5 class="card-title">Desculpe, nós erramos a URL ou a mesma está apontando para algo inexistente</h5>
+    <p><a href="/pt">Volte para a Home</a> para tentar achá-la novamente, ou pesquise na <a href="/pt/arquivos">página de Arquivos</a>.</p>
+  </div>
 </div>

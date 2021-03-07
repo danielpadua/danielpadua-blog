@@ -46,7 +46,7 @@ layout: page
 
   <div class="post-preview">
     <h1>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
     </h1>
 
     <div class="post-content">
@@ -68,11 +68,13 @@ layout: page
         {% include read-time.html content=post.content %}
 
         <!-- page views -->
-        {% if site.google_analytics.pv.enabled %}
-        <i class="far fa-eye fa-fw"></i>
-        <span id="pv_{{-post.title-}}" class="pageviews">
-          <i class="fas fa-spinner fa-spin fa-fw"></i>
-        </span>
+        {% if jekyll.environment == 'production' %}
+          {% if site.google_analytics.pv.enabled %}
+            <i class="far fa-eye fa-fw"></i>
+            <span id="pv_{{-post.title-}}" class="pageviews">
+              <i class="fas fa-spinner fa-spin fa-fw"></i>
+            </span>
+          {% endif %}
         {% endif %}
       </div>
 

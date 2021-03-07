@@ -1,0 +1,37 @@
+<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  {% t langs.{{ site.lang }} %}
+</button>
+<div class="dropdown-menu">
+  {% for lang in site.languages %}
+    {% if lang != site.lang %}
+      {% if lang == site.default_lang and site.default_locale_in_subfolder != true %}
+        <a class="lang-link dropdown-item" href="/" data-lang="{{ lang }}">{% t langs.{{ lang }} %}</a>
+      {% else %}
+        <a class="lang-link dropdown-item" href="{{ site.baseurl_root }}/{{ lang }}" data-lang="{{ lang }}">{% t langs.{{ lang }} %}</a>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</div>
+
+{% unless page.isNotFound %}
+<script type="text/javascript">
+    $(function() {
+        var currentLang = "{{ site.lang }}";
+        var lang = localStorage.getItem("lang") || navigator.language || navigator.userLanguage;
+        if (lang && lang.includes("en") && currentLang != "en") {
+            localStorage.setItem("lang", "en");
+            window.location.href = `${window.location.protocol}//${window.location.hostname}:${window.location.port}`;
+        } else if (lang && lang.includes("pt") && currentLang != "pt") {
+            localStorage.setItem("lang", "pt");
+            window.location.href = `${window.location.protocol}//${window.location.hostname}:${window.location.port}/pt`;
+        }
+    });
+
+    $(".lang-link").click(function(e) {
+      localStorage.removeItem("pv");
+      localStorage.removeItem("pv_created_date");
+      localStorage.removeItem("pv_source");
+      localStorage.setItem("lang", $(e.target).attr("data-lang"));
+    });
+</script>
+{% endunless %}

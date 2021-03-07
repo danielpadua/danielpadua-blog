@@ -7,12 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   {% if page.layout == 'home' or page.layout == 'post' %}
-    <meta name="pv-cache-enabled" content="{{ site.google_analytics.pv.enabled }}">
+    <meta name="pv-cache-enabled" content="{{ site.google_analytics.pv.cache }}">
 
-    {% if site.google_analytics.pv.enabled %}
-      {% if site.google_analytics.pv.proxy_endpoint != ''
-        and site.google_analytics.pv.proxy_endpoint %}
-        <meta name="pv-proxy-endpoint" content="{{ site.google_analytics.pv.proxy_endpoint }}">
+    {% if site.translations[site.lang].global.google_sp.enabled %}
+      {% if site.translations[site.lang].global.google_sp.endpoint != ''
+        and site.translations[site.lang].global.google_sp.endpoint %}
+        <meta name="pv-proxy-endpoint" content="{{ site.translations[site.lang].global.google_sp.endpoint }}">
       {% endif %}
 
       {% if site.google_analytics.pv.cache %}
@@ -26,7 +26,7 @@
 
   <title>
   {%- unless page.layout == "home" -%}
-    {{ page.title | append: " | "}}
+    {{ site.translations[site.lang].pages[page.title] | default: page.title | append: " | "}}
   {%- endunless -%}
     {{ site.title }}
   </title>
@@ -45,9 +45,13 @@
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous">
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
-    {% if site.google_analytics.pv.proxy_url and site.google_analytics.pv.enabled %}
-      <link rel="preconnect" href="{{ site.google_analytics.pv.proxy_url }}" crossorigin="use-credentials">
-      <link rel="dns-prefetch" href="{{ site.google_analytics.pv.proxy_url }}">
+    {% if site.translations[site.lang].global.google_sp.url and site.translations[site.lang].global.google_sp.enabled %}
+      <link rel="preconnect" href="{{ site.translations[site.lang].global.google_sp.url }}" crossorigin="use-credentials">
+      <link rel="dns-prefetch" href="{{ site.translations[site.lang].global.google_sp.url }}">
+    {% endif %}
+    {% if site.google_adsense.id %}
+      <script data-ad-client="{{site.google_adsense.id}}" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+      </script>
     {% endif %}
   {% endif %}
 
@@ -62,9 +66,9 @@
 
   <!-- Font Awesome -->
   <link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"
-    integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ="
-    crossorigin="anonymous">
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.css"
+      integrity="sha256-iqohlDG+xn9MRt53DKygzaORvtzhTCN4xvi1LHNU3OM="
+      crossorigin="anonymous">
 
   {% include css-selector.html %}
 

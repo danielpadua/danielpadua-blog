@@ -581,6 +581,21 @@ footer {
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
 
+/*--- language switcher layout ---*/
+
+.lang-switcher {
+  .dropdown-menu {
+    background-color: var(--topbar-wrapper-bg);
+  }
+  a {
+    color: var(--text-color) !important;
+    &:hover {
+      text-decoration: none;
+      background-color: transparent;
+    }
+  }
+}
+
 /* --- sidebar layout --- */
 
 $tab-count: 5 !default;

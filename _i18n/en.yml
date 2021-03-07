@@ -1,0 +1,82 @@
+global:
+  description: A blog containing technology and programming posts focused on .net and java natively written in english and portuguese
+  tagline: Daniel Padua’s technology and programming posts
+  site_description: >-                        # used by seo meta and the atom feed
+    A blog containing technology
+    and programming posts
+    focused on .net and java
+    natively written in
+    english and portuguese
+  words: words
+  min: min
+  read: read
+  google_sp:
+    enabled: true
+    url: 'https://danielpadua-blog-299920.ue.r.appspot.com'
+    endpoint: 'https://danielpadua-blog-299920.ue.r.appspot.com/query?id=ahlwfmRhbmllbHBhZHVhLWJsb2ctMjk5OTIwchULEghBcGlRdWVyeRiAgICYlKaDCgw'
+pages:
+  home: Daniel Padua Blog
+  categories: Categories
+  tags: Tags
+  archives: Archives
+  about: About
+  comment_policy: Comment Policy
+  posts: Posts
+categories:
+  category_label: category
+  categories_label: categories
+  post_label: post
+  posts_label: posts
+langs:
+  en: English
+  pt: Português
+topbar:
+  search_hint: Search
+panel:
+  recent_updates: Recent Updates
+  trending_tags: Trending Tags
+  tocs: Contents
+posts:
+  posted: Posted
+  by: by
+  updated: Updated
+  views: views
+  license_prefix: This post is licensed under
+  license_by: by the author
+  previous: Older
+  next: Newer
+post_sharing:
+  label: Share
+related_posts:
+  label: Further Reading
+footer:
+  rights:
+    brief: Some rights reserved.
+    verbose: >-
+      Except where otherwise noted, the blog posts on this site are licensed
+      under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.
+disqus:
+  shortname: blog-en-danielpadua
+
+datetime:
+  months:
+    january: January
+    february: February
+    march: March
+    april: April
+    may: May
+    june: June
+    july: July
+    august: August
+    september: September
+    october: October
+    november: November
+    december: December
+  week_days:
+    sunday: Sunday
+    monday: Monday
+    tuesday: Tuesday
+    wednesday: Wednesday
+    thursday: Thursday
+    friday: Friday
+    saturday: Saturday

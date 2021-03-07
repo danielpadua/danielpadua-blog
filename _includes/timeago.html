@@ -2,24 +2,54 @@
   Date format snippet
 -->
 
-{% assign tooltip_df = site.data.date_format.tooltip | default: '%a, %b %e, %Y, %l:%M %p %z' %}
-{% assign post_long_df = site.data.date_format.post.long | default: '%b %e, %Y' %}
-{% assign post_short_df = site.data.date_format.post.short | default: '%b %e' %}
+{% assign months = "january|february|march|april|may|june|july|august|september|october|november|december" | split: "|" %}
+{% assign weekdays = "sunday|monday|tuesday|wednesday|thursday|friday|saturday" | split: "|" %}
+
+{% assign d = include.date | date: "%-d" %}
+{% assign m = include.date | date: "%B" | downcase %}
+{% assign y = include.date | date: "%Y" %}
+{% assign wkd = include.date | date: "%A" | downcase %}
+
+{% assign week_day = site.translations[site.lang].datetime.week_days[wkd] %}
+{% assign month = site.translations[site.lang].datetime.months[m] %}
+
+{% case site.lang %}
+  {% when 'en' %}
+    {% capture tooltip_date %}
+      {{ week_day | slice: 0, 3 }}, {{ month | slice: 0, 3 }} {{ d }}, {{ y }}, {{ include.date | date: "%l:%M %p %z" }}
+    {% endcapture %}
+    {% capture short_date %}
+      {{ month | slice: 0, 3 }} {{ d }}
+    {% endcapture %}
+    {% capture long_date %}
+      {{ month | slice: 0, 3 }} {{ d }}, {{ y }}
+    {% endcapture %}
+  {% when 'pt' %}
+    {% capture tooltip_date %}
+      {{ week_day | slice: 0, 3 }}, {{ d }} de {{ month | slice: 0, 3 }} de {{ y }}, {{ include.date | date: "%T %z" }}
+    {% endcapture %}
+    {% capture short_date %}
+      {{ d }} de {{ month | slice: 0, 3 }}
+    {% endcapture %}
+    {% capture long_date %}
+      {{ d }} de {{ month | slice: 0, 3 }} de {{ y }}
+    {% endcapture %}
+{% endcase %}
 
 <span class="timeago {% if include.class %}{{ include.class }}{% endif %}"
   {% if include.tooltip %}
     data-toggle="tooltip"
     data-placement="bottom"
-    title="{{ include.date | date: tooltip_df }}"
+    title="{{ tooltip_date | strip }}"
   {% endif %}>
 
   {% assign this_year = site.time | date: "%Y" %}
   {% assign post_year = include.date | date: "%Y" %}
 
   {% if post_year == this_year %}
-    {{ include.date | date: post_short_df }}
+    {{ short_date | strip }}
   {% else %}
-    {{ include.date | date: post_long_df }}
+    {{ long_date | strip }}
   {% endif %}
 
   <i class="unloaded">{{ include.date | date_to_xmlschema }}</i>
