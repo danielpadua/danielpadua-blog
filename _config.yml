@@ -65,6 +65,9 @@ google_analytics:
 google_adsense:
   id: ca-pub-8952525770650051
 
+infolinks:
+  id: 3318015
+
 # Prefer color scheme setting.
 #
 # Note: Keep empty will follow the system prefer color by default,

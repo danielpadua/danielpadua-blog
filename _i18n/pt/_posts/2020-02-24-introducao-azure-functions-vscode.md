@@ -3,7 +3,7 @@ title: "Introdução Azure Functions + Vscode"
 description: "Azure Functions, Serverless: Uma introdução ao mundo serverless na plataforma Microsoft Azure, aprendendo como construir e entregar uma API feita com javascript e nodejs"
 date: 2020-02-24 12:00:00 -0300
 last_modified_at: 2020-12-31 17:04:00 -0300
-categories: [Serverless, Azure Functions]
+categories: [Serverless, Azure]
 tags: [serverless, azure functions, visual studio code, javascript]
 image:
   src: /assets/img/posts/introduction-to-azure-functions-vscode/featured.png
