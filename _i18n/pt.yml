@@ -43,6 +43,10 @@ posts:
   license_by: pelo autor
   previous: Mais Antigo
   next: Mais Recente
+  buy-me-a-cofee: 
+    title: Este post foi útil?
+    text: Caso tenha achado que esse post foi útil e quiser me apoiar, você pode fazer isto me pagando um café por exemplo. Doações ajudam a manter este blog livre de anúncios.
+    button: Me pague um café
 post_sharing:
   label: Compartilhar
 related_posts:

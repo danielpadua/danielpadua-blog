@@ -45,6 +45,10 @@ posts:
   license_by: by the author
   previous: Older
   next: Newer
+  buy-me-a-cofee: 
+    title: Was this post useful?
+    text: If you found this post useful and would like to support me, you can do so by buying me a coffee. Donations help keep this blog ad-free.
+    button: Buy me a coffee
 post_sharing:
   label: Share
 related_posts:
