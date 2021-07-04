@@ -64,6 +64,12 @@ const PvStorage = (function () {
     localStorage.setItem(key, val);
   }
 
+  function clear() {
+    localStorage.removeItem(Keys.KEY_PV);
+    localStorage.removeItem(Keys.KEY_PV_SRC);
+    localStorage.removeItem(Keys.KEY_CREATION);
+  }
+
   function saveCache(pv, src) {
     set(Keys.KEY_PV, pv);
     set(Keys.KEY_PV_SRC, src);
@@ -102,7 +108,7 @@ const PvStorage = (function () {
     },
     inspectKeys() {
       if (localStorage.length !== PvStorage.keysCount()) {
-        localStorage.clear();
+        clear();
         return;
       }
 
@@ -114,7 +120,7 @@ const PvStorage = (function () {
           case Keys.KEY_CREATION:
             break;
           default:
-            localStorage.clear();
+            clear();
             return;
         }
       }
@@ -241,7 +247,7 @@ $(function() {
     }
 
   } else { // no cached
-    
+
     if (PvOpts.hasLocalMeta()) {
       fetchLocalPageviews().then(fetchProxyPageviews);
     } else {
